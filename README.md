@@ -5,7 +5,7 @@ avbroot allows to lock phone's bootloader with root or custom rom ( in this case
 
 [kernelsu next](https://github.com/KernelSU-Next/KernelSU-Next)
 
-Frist step is to download the avb_pkmd.bin which is in repo
+*Frist step* is to download the avb_pkmd.bin which is in repo
 
 So you can go ahead and clone this repo wiht command in cmd:
 
