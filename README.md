@@ -1,10 +1,12 @@
 # AVBROOT OTA Package & Tutorial For Nothing Phone (2) ( Pong )
 avbroot allows locking phone's bootloader with root or custom operating system ( in this case only with kernelsu next)
 
-# Orginal repos
+# Orginal repositories
 [avbroot](https://github.com/chenxiaolong/avbroot)
 
 [kernelsu next](https://github.com/KernelSU-Next/KernelSU-Next)
+
+Big thanks for their work
 
 # Warning
 **I'm not responsible for any devices that get hard bricked by following this process**
@@ -24,10 +26,16 @@ If this settings is enabled you **should** be safe
 
 If something goes wrong and following setting is enabled you **should be able to unlock** bootloader and reflash/sideload operating system
 
+Remember to wipe super:
+
+```sh
+fastboot wipe-super super_empty.img
+```
+
 # When the device can get into hard brick ?
 If you will update/flash any of images manually ( not via OTA update ) the device will become unbootable
 
-Do not try to update kernelsu next by it's manager
+So do not try to update kernelsu next by it's manager
 
 **Every update must be done by OTA update**
 
@@ -48,7 +56,7 @@ fastboot --version
 platform tools 35.0.2 was released in July 2024 which is the latest version for now
 
 # Frist Installation
-Download lastest OTA package from releases and place it in avbroot folder
+Download lastest OTA package from releases and place it in repo folder
 
 Then execute following command:
 
@@ -70,6 +78,101 @@ Windows:
 set ANDROID_PRODUCT_OUT=extracted
 ```
 
-Now if you want to flash the images you will need to move following files into extracted folder:
+Now you will need to move following files into extracted folder:
 
-- 
+- android-info.txt
+- fastboot-info.txt
+
+Now reboot your phone to bootloader
+
+If it isn't already unlocked you must unlock it now:
+
+```sh
+fastboot flashing unlock
+```
+
+Now you can flash all images by executing:
+
+```sh
+fastboot flashall --skip-reboot
+```
+
+Reboot device to bootloader to apply avbroot:
+
+```sh
+fastboot reboot bootloader
+```
+
+Erase avb_custom_key partition:
+
+```sh
+fastboot erase avb_custom_key
+```
+
+Flash new keys:
+
+```sh
+fastboot flash avb_custom_key avb_pkmd.bin
+```
+
+The device might says but it's okey:
+
+```sh
+Warning: skip copying avb_custom_key image avb footer (avb_custom_key partition size: 0, avb_custom_key image size: 1032)
+```
+
+Now we will check if the avbroot applied the packes successfully
+
+Reboot phone into system:
+
+```sh
+fastboot reboot
+```
+
+Install kernelsu next manager
+
+Grant root for adb and execute following command via adb shell:
+
+```sh
+su -c 'dmesg | grep libfs_avb'
+```
+
+If you didn't get any result redo every step
+
+You should get following resukt:
+
+```sh
+init: [libfs_avb]Returning avb_handle with status: Success
+```
+
+If you get that you can now lock bootloader:
+
+```sh
+fastboot flashing lock
+```
+
+# Updating
+
+Simply use OTA package and sideload it
+
+```sh
+adb sideload path_to_ota
+```
+
+# How do I remove the paches ?
+
+Unlock bootloader and execute this command:
+
+```sh
+fastboot erase avb_custom_key
+```
+
+That's it
+
+# KernelSU Next Manager is not detecting root ?
+
+If you facing this problem try use system for sometime, reboot it or reopen/reinstall kernelsu manager
+
+# Releases
+
+[NothingOS 3.0-250113-1723 With KernelSu Next]()
