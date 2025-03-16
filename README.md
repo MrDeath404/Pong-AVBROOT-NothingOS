@@ -115,7 +115,7 @@ Flash new keys:
 fastboot flash avb_custom_key avb_pkmd.bin
 ```
 
-The device might says but it's okey:
+The device might says ( but it's okey ):
 
 ```sh
 Warning: skip copying avb_custom_key image avb footer (avb_custom_key partition size: 0, avb_custom_key image size: 1032)
