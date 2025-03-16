@@ -16,18 +16,20 @@ If this process goes wrong the phone will become unbootable into following modes
 - Recovery mode ( including fastboot )
 - Operating system
 
-Bootloader mode **should** be still bootable so make sure you didn't uncheck following settings:
+Bootloader mode **should** be still bootable so make sure you didn't uncheck following setting:
 
 - Settings->Developer Options->Allow OEM unlocking
 
 If this settings is enabled you **should** be safe
 
-If something bad happends and following setting is enabled you **should be able to unlock** bootloader and reflash/sideload operating system
+If something goes wrong and following setting is enabled you **should be able to unlock** bootloader and reflash/sideload operating system
 
-# When the device can get into hard bricked ?
-If you will update/flash any of images manually ( not by OTA update ) the device will be unbootable
+# When the device can get into hard brick ?
+If you will update/flash any of images manually ( not via OTA update ) the device will become unbootable
 
-Do not try to update kernelsu next by it's manager, **every update must be done by OTA update**
+Do not try to update kernelsu next by it's manager
+
+**Every update must be done by OTA update**
 
 # Now we can get started
 
