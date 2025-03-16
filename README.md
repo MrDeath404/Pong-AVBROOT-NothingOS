@@ -92,6 +92,7 @@ Now you will need to move following files into extracted folder:
 
 - android-info.txt
 - fastboot-info.txt
+- super_empty.img
 
 Now reboot your phone to bootloader
 
