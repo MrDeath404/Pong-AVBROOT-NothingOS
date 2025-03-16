@@ -3,7 +3,7 @@ avbroot allows locking phone's bootloader with root or custom operating system (
 
 # Orginal repositories
 - [avbroot](https://github.com/chenxiaolong/avbroot) by [chenxiaolong ](https://github.com/chenxiaolong)
-- [kernelsu next](https://github.com/KernelSU-Next/KernelSU-Next) bt [rifsxd](https://github.com/rifsxd)
+- [kernelsu next](https://github.com/KernelSU-Next/KernelSU-Next) by [rifsxd](https://github.com/rifsxd)
 
 Big thanks for their work
 
