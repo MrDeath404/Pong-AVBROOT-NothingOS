@@ -2,9 +2,8 @@
 avbroot allows locking phone's bootloader with root or custom operating system ( in this case kernelsu next)
 
 # Orginal repositories
-[avbroot](https://github.com/chenxiaolong/avbroot)
-
-[kernelsu next](https://github.com/KernelSU-Next/KernelSU-Next)
+- [avbroot](https://github.com/chenxiaolong/avbroot) by [chenxiaolong ](https://github.com/chenxiaolong)
+- [kernelsu next](https://github.com/KernelSU-Next/KernelSU-Next) bt [rifsxd](https://github.com/rifsxd)
 
 Big thanks for their work
 
@@ -26,11 +25,22 @@ If this settings is enabled you **should** be safe
 
 If something goes wrong and following setting is enabled you **should be able to unlock** bootloader and reflash/sideload operating system
 
+# Important information
+
 Remember to wipe super:
 
 ```sh
 fastboot wipe-super super_empty.img
 ```
+
+Or you won't be able to update in future
+
+Play integracy not working by default so you will need to flash following modules:
+
+- [Zygisk Next](https://github.com/Dr-TSNG/ZygiskNext/releases/tag/v1.2.7) by [Dr-TSNG](https://github.com/Dr-TSNG)
+- [Play Integracy Fix](https://github.com/chiteroman/PlayIntegrityFix) by [chiteroman](https://github.com/chiteroman)
+
+Big thanks to them for their work
 
 # When the device can get into hard brick ?
 If you will update/flash any of images manually ( not via OTA update ) the device will become unbootable
@@ -121,7 +131,7 @@ The device might says ( but it's okey ):
 Warning: skip copying avb_custom_key image avb footer (avb_custom_key partition size: 0, avb_custom_key image size: 1032)
 ```
 
-Now we will check if the avbroot applied the packes successfully
+Now we will check if the avbroot applied the paches successfully
 
 Reboot phone into system:
 
@@ -139,7 +149,7 @@ su -c 'dmesg | grep libfs_avb'
 
 If you didn't get any result redo every step
 
-You should get following resukt:
+You should get following result:
 
 ```sh
 init: [libfs_avb]Returning avb_handle with status: Success
@@ -175,4 +185,4 @@ If you facing this problem try use system for sometime, reboot it or reopen/rein
 
 # Releases
 
-[NothingOS 3.0-250113-1723 With KernelSu Next]()
+[NothingOS 3.0-250113-1723 With KernelSu Next](https://mega.nz/file/hhRlnIoD#icU7CNFvF0g-wTx6hnNojtAkNAMenMxldu85RBWuK9U), release date 16.03.2025
