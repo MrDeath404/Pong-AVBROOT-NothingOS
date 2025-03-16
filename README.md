@@ -1,5 +1,5 @@
 # AVBROOT OTA Package & Tutorial For Nothing Phone (2) ( Pong )
-avbroot allows locking phone's bootloader with root or custom operating system ( in this case only with kernelsu next)
+avbroot allows locking phone's bootloader with root or custom operating system ( in this case kernelsu next)
 
 # Orginal repositories
 [avbroot](https://github.com/chenxiaolong/avbroot)
