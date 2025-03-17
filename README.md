@@ -51,7 +51,7 @@ System -> Developer options -> OEM unlocking
 - Check if you can sideload OTA package without installation error otherwise you won't be able to update without wiping super which is not allowed in lock state
 - Phone will display message at every boot that it's running modificated operating system at lock state
 
-# When your device can become unbootable (hard briced)
+# When your device can become unbootable (hard bricked)
 - Device will be unbootable (hard bricked) when you will modify any of installed images (by root for example) so don't update KernelSU Next by it's manager
 
 # How do you apply update ?
