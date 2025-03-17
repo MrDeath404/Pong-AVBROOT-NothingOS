@@ -8,7 +8,8 @@ avbroot allows locking phone's bootloader with root or custom operating system (
 Big thanks for their work
 
 # Original Operating System Archive
-- [nothing active](https://github.com/spike0en/nothing_archive) by [Spike](https://github.com/spike0en)
+- [nothing
+active](https://github.com/spike0en/nothing_archive) by [Spike](https://github.com/spike0en)
 
 Thank you for supporting nothing devices 
 
