@@ -54,7 +54,7 @@ System -> Developer options -> OEM unlocking
 # When your device can become unbootable (hard bricked)
 - Device will be unbootable (hard bricked) when you will modify any of installed images (by root for example) so don't update KernelSU Next by it's manager
 
-# How do you apply update ?
+# Applying OTA update
 - Simply by ADB sideload (via recovery). You can do it with following command:
 ```sh
 adb sideload update_package_path.zip
@@ -62,7 +62,7 @@ adb sideload update_package_path.zip
 
 # Now we can get started
 1. Frist thing you should do is to read [warning](#warning), [requirements](#requirements) and [important information](#important-information)
-2. If you already have done it and wants to apply update please read about [applying OTA update](#how-do-you-apply-update?) if not go to [frist installation](#frist-Installation)
+2. If you already have done it and wants to apply update please read about [applying OTA update](#applying-OTA-update) if not go to [frist installation](#frist-Installation)
 
 # Frist Installation
 1. Open console and clone this repositorie:
