@@ -1,17 +1,11 @@
 # AVBROOT OTA Package & Tutorial For Nothing Phone (2) ( Pong )
 - Allows to use rooted operating system and keep bootloader locked
 
-<<<<<<< HEAD
 # Requirements
 - A brain
 - Nothing Phone (2)
 - PC with the lastest platform tools
 - USB cable C-A
-=======
-# Original repositories
-- [avbroot](https://github.com/chenxiaolong/avbroot) by [chenxiaolong ](https://github.com/chenxiaolong)
-- [kernelsu next](https://github.com/KernelSU-Next/KernelSU-Next) by [rifsxd](https://github.com/rifsxd)
->>>>>>> c302b81cbacc73c65ac546c4e155d561794a3c30
 
 # What is bootloader ?
 - Bootloader is the frist program that starts with cpu boots
@@ -33,13 +27,7 @@
 # Original repositories
 - [AVBROOT](https://github.com/chenxiaolong/avbroot) by [chenxiaolong](https://github.com/chenxiaolong)
 - [KernelSU Next](https://github.com/KernelSU-Next/KernelSU-Next) by [rifsxd](https://github.com/rifsxd)
-- [Nothing Archive]() by [spike0en](https://github.com/spike0en).
-
-# Original Operating System Archive
-- [nothing
-active](https://github.com/spike0en/nothing_archive) by [Spike](https://github.com/spike0en)
-
-Thank you for supporting nothing devices 
+- [Nothing Archive]() by [spike0en](https://github.com/spike0en)
 
 # Warning
 - I'm not responsible for any devices that are hard bricked by following this procedure
