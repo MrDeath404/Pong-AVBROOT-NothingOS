@@ -149,4 +149,4 @@ fastboot flash avb_custom_key avb_pkmd.bin
 - If you facing this problem try use system for sometime, reboot it or reopen/reinstall KernelSU Manager
 
 # Releases
-[NothingOS 3.0-250113-1723 With KernelSU Next](https://mega.nz/file/hhRlnIoD#icU7CNFvF0g-wTx6hnNojtAkNAMenMxldu85RBWuK9U) release date 16.03.2025
+[NothingOS 3.0-250113-1723 With KernelSU Next](phttps://mega.nz/file/hhRlnIoD#icU7CNFvF0g-wTx6hnNojtAkNAMenMxldu85RBWuK9U) waiting for next full OTA update
