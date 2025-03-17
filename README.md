@@ -55,7 +55,7 @@ System -> Developer options -> OEM unlocking
 - Device will be unbootable (hard bricked) when you will modify any of installed images (by root for example) so don't update KernelSU Next by it's manager
 
 # How do you apply update ?
-- Simply By ADB sideload (via recovery). You can do it with following command:
+- Simply by ADB sideload (via recovery). You can do it with following command:
 ```sh
 adb sideload update_package_path.zip
 ```
