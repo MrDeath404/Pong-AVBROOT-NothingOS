@@ -1,11 +1,10 @@
 # AVBROOT OTA Package & Tutorial For Nothing Phone (2) ( Pong )
 - Allows to use rooted operating system and keep bootloader locked
 
-# Requirements
-- A brain
-- Nothing Phone (2)
-- PC with the lastest platform tools
-- USB cable C-A
+# Original repositories
+- [AVBROOT](https://github.com/chenxiaolong/avbroot) by [chenxiaolong](https://github.com/chenxiaolong)
+- [KernelSU Next](https://github.com/KernelSU-Next/KernelSU-Next) by [rifsxd](https://github.com/rifsxd)
+- [Nothing Archive](https://github.com/spike0en/nothing_archive) by [spike0en](https://github.com/spike0en)
 
 # What is bootloader ?
 - Bootloader is the frist program that starts with cpu boots
@@ -13,6 +12,12 @@
 
 # Why you need to unlock bootloader ?
 - When bootloader is locked you are not able to flash/boot any other operating system that doesn't have valid root of trust. That's why we going to unlock it and then load custom root of trust
+
+# Why you may want to relock bootloader ?
+- The main resson is when the bootloader is lock no one is allowed to format or change operating system on your phone so simplest answer is to protect your data
+
+# When your device can become unbootable (hard bricked)
+- Device will be unbootable (hard bricked) when you will modify any of installed images (by root for example) so don't update KernelSU Next by it's manager
 
 # What is root and why it might be useful for you ?
 - In Linux root is first created account with all available privilages, in short root can do everything to the system
@@ -24,13 +29,15 @@
     - Having better controll
     - Allows you to use terminal emulators (like [Termux](https://github.com/termux/termux-app)) on root level
 
-# Original repositories
-- [AVBROOT](https://github.com/chenxiaolong/avbroot) by [chenxiaolong](https://github.com/chenxiaolong)
-- [KernelSU Next](https://github.com/KernelSU-Next/KernelSU-Next) by [rifsxd](https://github.com/rifsxd)
-- [Nothing Archive](https://github.com/spike0en/nothing_archive) by [spike0en](https://github.com/spike0en)
+# KernelSU Next Manager is not detecting root ?
+- If you facing this problem try use system for sometime, reboot it or reopen/reinstall KernelSU Manager
+
+# Now we can get started
+1. Frist thing you should do is to read [warning](#warning), [requirements](#requirements) and [important information](#important-information)
+2. If you already have done it and want to apply update please read about [applying OTA update](#applying-OTA-update) if not go to [frist installation](#frist-Installation) or if you want to go back to fully stock operating system go to [removing AVBROOT patches](#removing-avbroot-patches)
 
 # Warning
-- I'm not responsible for any devices that are hard bricked by following this procedure
+- **I'm not responsible for any devices that are hard bricked by following this procedure**
 - This process require data formating so do not forget to take a backup
     - You can take backup with [Swift Backup](https://www.swiftapps.org/) (root is required to make full backup)
 - When something goes wrong the device **might** become unbootable into following modes:
@@ -43,6 +50,12 @@ System -> Developer options -> OEM unlocking
 ```
 - If following setting is turned on the bootloader can be unlocked in anytime
 
+# Requirements
+- A brain
+- Nothing Phone (2)
+- PC with the lastest platform tools
+- USB cable C-A
+
 # Important information
 - AVBROOT is not providing google play integracy on any level so you will need to install following module:
     - [Zygisk Next](https://github.com/Dr-TSNG/ZygiskNext) by [Dr-TSNG](https://github.com/Dr-TSNG)
@@ -50,19 +63,10 @@ System -> Developer options -> OEM unlocking
     - [TrickyStore](https://github.com/5ec1cff/TrickyStore) by [5ec1cff](https://github.com/5ec1cff) (with valid keyboxes to pass strong integracy)
 - Check if you can sideload OTA package without installation error otherwise you won't be able to update without wiping super which is not allowed in lock state
 - Phone will display message at every boot that it's running modificated operating system at lock state
-
-# When your device can become unbootable (hard bricked)
-- Device will be unbootable (hard bricked) when you will modify any of installed images (by root for example) so don't update KernelSU Next by it's manager
-
-# Applying OTA update
-- Simply by ADB sideload (via recovery). You can do it with following command:
-```sh
-adb sideload update_package_path.zip
+- **It is recommended to leave following setting always on:**
 ```
-
-# Now we can get started
-1. Frist thing you should do is to read [warning](#warning), [requirements](#requirements) and [important information](#important-information)
-2. If you already have done it and wants to apply update please read about [applying OTA update](#applying-OTA-update) if not go to [frist installation](#frist-Installation)
+System -> Developer options -> OEM unlocking
+```
 
 # Frist Installation
 1. Open console and clone this repositorie:
@@ -139,14 +143,17 @@ init: [libfs_avb]Returning avb_handle with status: Success
 fastboot flashing lock
 ```
 
-# How do you go back and remove applied patches ?
+# Applying OTA update
+- Simply by ADB sideload (via recovery). You can do it with following command:
+```sh
+adb sideload update_package_path.zip
+```
+
+# Removing AVBROOT patches
 - Simply erase avb_custom_key partition:
 ```sh
 fastboot flash avb_custom_key avb_pkmd.bin
 ```
 
-# KernelSU Next Manager is not detecting root ?
-- If you facing this problem try use system for sometime, reboot it or reopen/reinstall KernelSU Manager
-
 # Releases
-[NothingOS 3.0-250113-1723 With KernelSU Next](phttps://mega.nz/file/hhRlnIoD#icU7CNFvF0g-wTx6hnNojtAkNAMenMxldu85RBWuK9U) waiting for next full OTA update
+[NothingOS 3.0-250113-1723 With KernelSU Next](https://mega.nz/file/hhRlnIoD#icU7CNFvF0g-wTx6hnNojtAkNAMenMxldu85RBWuK9U) release date 16.03.2025
