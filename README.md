@@ -5,7 +5,7 @@
 - [AVBROOT](https://github.com/chenxiaolong/avbroot) by [chenxiaolong](https://github.com/chenxiaolong)
 - [KernelSU Next](https://github.com/KernelSU-Next/KernelSU-Next) by [rifsxd](https://github.com/rifsxd)
 - [Nothing Archive](https://github.com/spike0en/nothing_archive) by [spike0en](https://github.com/spike0en) <br>
-Thanks them all for their work, to show respect go it to thir repositories and leave a star
+Thanks them all for their work, to show respect go it to their repositories and leave a star
 
 # What is bootloader ?
 - Bootloader is the frist program that starts with cpu boots
@@ -36,7 +36,7 @@ Thanks them all for their work, to show respect go it to thir repositories and l
 # Now we can get started
 1. Frist thing you should do is to read [warning](#warning), [requirements](#requirements) and [important information](#important-information)
 2. If you already have done it and want to apply update please read about [applying OTA update](#applying-OTA-update) if not go to [frist installation](#frist-Installation) or if you want to go back to fully stock operating system go to [removing AVBROOT patches](#removing-avbroot-patches).
-    - You can also make your own one by reading avbroot tutorial [initial setup](https://github.com/chenxiaolong/avbroot?tab=readme-ov-file#initial-setup)
+    - You can also make your own one by reading AVBROOT tutorial [AVBROOT usage](https://github.com/chenxiaolong/avbroot?tab=readme-ov-file#usage)
 
 # Warning
 - **I'm not responsible for any devices that are hard bricked by following this procedure**
