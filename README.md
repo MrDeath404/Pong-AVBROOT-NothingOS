@@ -86,36 +86,36 @@ fastboot flashing unlock
 ```
 Device will try to boot into operating system to redo 3th step.
 
-5. Download OTA zip from [releases](#releases), move it to repo folder and extract:
-```sh
-avbroot ota extract --input ota.zip.patched --directory extracted --fastboot --all
-```
-
-6. Set ANDROID_PRODUCT_OUT variable inside your console:
-```sh
-set ANDROID_PRODUCT_OUT=extracted
-```
-
-7. Now move following files into extracted folder inside repo folder:
-    - android-info.txt
-    - fastboot-info.txt
-    - super_empty.img
-
-8. Flash all system images (including firmware):
-```sh
-fastboot flashall --skip-reboot
-```
-While this process phone should wipe super automatically but check if it was done with succes in console or do it manually:
+5. Do not forget to wipe super empty (or you won't be able to updated):
 ```sh
 fastboot wipe-super super_empty.img
 ```
 
-9. Reboot phone into bootloader again to apply custom root of trust:
+6. Download OTA zip from [releases](#releases), move it to repo folder and extract:
+```sh
+avbroot ota extract --input ota.zip.patched --directory extracted --fastboot --all
+```
+
+7. Set ANDROID_PRODUCT_OUT variable inside your console:
+```sh
+set ANDROID_PRODUCT_OUT=extracted
+```
+
+8. Now move following files into extracted folder inside repo folder:
+    - android-info.txt
+    - fastboot-info.txt
+
+9. Flash all system images (including firmware):
+```sh
+fastboot flashall --skip-reboot
+```
+
+10. Reboot phone into bootloader again to apply custom root of trust:
 ```sh
 fastboot reboot bootloader
 ```
 
-10. Apply custom root of trust
+11. Apply custom root of trust
 ```sh
 fastboot reboot bootloader
 fastboot erase avb_custom_key
@@ -126,7 +126,7 @@ The device might says ( but it's okey ):
 Warning: skip copying avb_custom_key image avb footer (avb_custom_key partition size: 0, avb_custom_key image size: 1032)
 ```
 
-11. To make sure everything is ready reboot phone into system grant root permision for adb and execute this command via adb shell:
+12. To make sure everything is ready reboot phone into system grant root permision for adb and execute this command via adb shell:
 ```sh
 fastboot reboot
 ```
@@ -138,7 +138,7 @@ This should return this following message:
 init: [libfs_avb]Returning avb_handle with status: Success
 ```
 
-12. Now we can finally lock the bootloader (frist reboot into bootloader):
+13. Now we can finally lock the bootloader (frist reboot into bootloader):
 ```sh
 fastboot flashing lock
 ```
