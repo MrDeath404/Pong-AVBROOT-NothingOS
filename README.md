@@ -86,7 +86,7 @@ fastboot flashing unlock
 ```
 Device will try to boot into operating system to redo 3th step.
 
-5. Do not forget to wipe super empty (or you won't be able to updated):
+5. Do not forget to wipe super empty (or you won't be able to update in future):
 ```sh
 fastboot wipe-super super_empty.img
 ```
