@@ -5,7 +5,8 @@
 - [AVBROOT](https://github.com/chenxiaolong/avbroot) by [chenxiaolong](https://github.com/chenxiaolong)
 - [KernelSU Next](https://github.com/KernelSU-Next/KernelSU-Next) by [rifsxd](https://github.com/rifsxd)
 - [Nothing Archive](https://github.com/spike0en/nothing_archive) by [spike0en](https://github.com/spike0en) <br>
-Thanks them all for their work, to show respect go it to their repositories and leave a star
+Thanks them all for their work, to show respect go it to their repositories and leave a star <br>
+This is only tutorial how to use AVBROOT tool made by [chenxiaolong](https://github.com/chenxiaolong)
 
 # What is bootloader ?
 - Bootloader is the frist program that starts with cpu boots
@@ -36,7 +37,7 @@ Thanks them all for their work, to show respect go it to their repositories and 
 # Now we can get started
 1. Frist thing you should do is to read [warning](#warning), [requirements](#requirements) and [important information](#important-information)
 2. If you already have done it and want to apply update please read about [applying OTA update](#applying-OTA-update) if not go to [frist installation](#frist-Installation) or if you want to go back to fully stock operating system go to [removing AVBROOT patches](#removing-avbroot-patches).
-    - You can also make your own one by reading AVBROOT tutorial [AVBROOT usage](https://github.com/chenxiaolong/avbroot?tab=readme-ov-file#usage)
+    - You can also make your own one by reading AVBROOT tutorial [own ota updates/build](#how-to-make-own-patched-ota)
 
 # Warning
 - **I'm not responsible for any devices that are hard bricked by following this procedure**
@@ -145,6 +146,44 @@ init: [libfs_avb]Returning avb_handle with status: Success
 fastboot flashing lock
 ```
 
+14. After system boots turn off auto updates in developer options
+
+# How to make own patched ota
+1. Frist you will need to generate own keys to sign ota and to load them into bootloader:
+```sh
+avbroot key generate-key -o avb.key
+avbroot key generate-key -o ota.key
+```
+
+3. Do not forget passwords that you gave to these files or you won't be able to make next steps
+
+4. Now we will convert keys to make bootloader able to read them:
+```sh
+avbroot key encode-avb -k avb.key -o avb_pkmd.bin
+```
+
+5. OTA updates need special cetrificate to sign it with so we will make one:
+```sh
+avbroot key generate-cert -k ota.key -o ota.crt
+```
+
+6. Now download an OTA update (it can be custom os ota but I didn't test this on any)
+- To apply patches use this command:
+    - If you want to patch with root you will need to get rooted image (prepatched) then you will just add this:
+```sh
+--prepatched prepatched_boot.img
+```
+    - If you dont want to have rooted system add this:
+```sh
+--rootless
+```
+- Now full command to patch OTA with your own keys:
+```sh
+avbroot ota patch --input ota.zip --key-avb avb.key --key-ota ota.key --cert-ota ota.crt (root flag)
+```
+
+7. Go to [frist installation](#frist-Installation) if you didn't flash your ota before or [applying OTA update](#applying-OTA-update) if you have done it
+
 # Applying OTA update
 - Simply by ADB sideload (via recovery). You can do it with following command:
 ```sh
@@ -159,3 +198,4 @@ fastboot flash avb_custom_key avb_pkmd.bin
 
 # Releases
 [NothingOS 3.0-250113-1723 With KernelSU Next](https://mega.nz/file/hhRlnIoD#icU7CNFvF0g-wTx6hnNojtAkNAMenMxldu85RBWuK9U) release date 16.03.2025
+[NothingOS 3.0-250304-1717 With KernelSU Next](https://mega.nz/file/ZgZS2YwB#Sc2scZrSkBTx_F3rNEWzZCFzVcFJE2e9OcFkuJ0eQGE) release date 20.03.2025
