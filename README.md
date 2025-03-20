@@ -197,5 +197,5 @@ fastboot flash avb_custom_key avb_pkmd.bin
 ```
 
 # Releases
-[NothingOS 3.0-250113-1723 With KernelSU Next](https://mega.nz/file/hhRlnIoD#icU7CNFvF0g-wTx6hnNojtAkNAMenMxldu85RBWuK9U) release date 16.03.2025
+[NothingOS 3.0-250113-1723 With KernelSU Next](https://mega.nz/file/hhRlnIoD#icU7CNFvF0g-wTx6hnNojtAkNAMenMxldu85RBWuK9U) release date 16.03.2025 <br>
 [NothingOS 3.0-250304-1717 With KernelSU Next](https://mega.nz/file/ZgZS2YwB#Sc2scZrSkBTx_F3rNEWzZCFzVcFJE2e9OcFkuJ0eQGE) release date 20.03.2025
