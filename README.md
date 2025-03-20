@@ -182,7 +182,7 @@ avbroot key generate-cert -k ota.key -o ota.crt
 avbroot ota patch --input ota.zip --key-avb avb.key --key-ota ota.key --cert-ota ota.crt (root flag)
 ```
 
-7. Go to [frist installation](#frist-Installation) if you didn't flash your ota before or [applying OTA update](#applying-OTA-update) if you have done it
+7. Go to [frist installation](#frist-Installation) if you didn't flash your OTA before or [applying OTA update](#applying-OTA-update) if you have done it
 
 # Applying OTA update
 - Simply by ADB sideload (via recovery). You can do it with following command:
