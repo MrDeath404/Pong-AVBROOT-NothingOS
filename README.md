@@ -167,13 +167,13 @@ avbroot key encode-avb -k avb.key -o avb_pkmd.bin
 avbroot key generate-cert -k ota.key -o ota.crt
 ```
 
-6. Now download an OTA update (it can be custom os ota but I didn't test this on any)
+6. Now download an OTA update (full OTA) (it can be custom os ota but I didn't test this on any)
 - To apply patches use this command:
-    - If you want to patch with root you will need to get rooted image (prepatched) then you will just add this:
+- If you want to patch with root you will need to get rooted image (prepatched) then you will just add this:
 ```sh
 --prepatched prepatched_boot.img
 ```
-    - If you dont want to have rooted system add this:
+- If you dont want to have rooted system add this:
 ```sh
 --rootless
 ```
