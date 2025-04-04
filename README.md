@@ -199,5 +199,5 @@ adb sideload update_package_path.zip
 # Removing AVBROOT patches
 - Simply erase avb_custom_key partition:
 ```sh
-fastboot flash avb_custom_key avb_pkmd.bin
+fastboot erase avb_custom_key
 ```
